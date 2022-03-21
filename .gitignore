@@ -58,3 +58,15 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+*.DS_Store
+
+.idea
+mono_crash.448a3ad828.0.json
+.vsconfig
+mono_crash.4283b2f220.0.json
+mono_crash.46aae6a557.0.json
+mono_crash.4283b2f220.0.json
+mono_crash.mem.67440.1.blob
+Assets/.DS_Store
+Assets/.DS_Store
+Assets/.DS_Store
