@@ -26,14 +26,8 @@ public class PlayerAnimation : MonoBehaviour
     {
         if (Time.time > timer)
         {
-            //sr.sprite = animSprites[state % animSprites.Length];
-            //state++;
             sr.sprite = animSprites[state % animSprites.Length];
             state++;
-
-            if (state == animSprites.Length)
-                state = 0;
-           
             timer = Time.time + timeTreshold;
         }
     }
