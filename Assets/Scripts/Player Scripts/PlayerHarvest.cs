@@ -12,7 +12,7 @@ public class PlayerHarvest : MonoBehaviour
     private AudioSource audioSource;
 
     private Collider2D collidedBush;
-    private BushFruits hitBush;
+    private BushFruits hitBush; 
 
     private bool canHarvestFruits;
 

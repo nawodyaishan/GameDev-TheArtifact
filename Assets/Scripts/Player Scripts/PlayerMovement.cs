@@ -1,103 +1,87 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// C# Script for player movements
-/// </summary>
-/// 
 public class PlayerMovement : MonoBehaviour
 {
-     public float movementSpeed = 3f;
 
-     private Rigidbody2D myBody;
+    public float movementSpeed = 3f;
 
-     private Vector2 moveVector;
+    private Rigidbody2D myBody;
 
-     private GameObject artifact;
-     
-     private SpriteRenderer sr;
-     private float harvestTimer;
-     private bool isHarvesting;
-     
-     private string MOVEMENT_AXIS_X = "Horizontal";
-     private string MOVEMENT_AXIS_Y = "Vertical";
-     
+    private Vector2 moveVector;
 
-     private void Awake()
-     {    //get the rigidbody2d component
-          myBody = GetComponent<Rigidbody2D>();
-          sr = GetComponent<SpriteRenderer>();
-     }
+    private SpriteRenderer sr;
 
-     private void Update()
-     {
-          FlipSprite();
-     }
+    private float harvestTimer;
+    private bool isHarvesting;
 
-     private void FixedUpdate()
-     {
-          if (isHarvesting)
-               myBody.velocity = Vector2.zero;
-          else
-          {
-               moveVector = new Vector2(Input.GetAxisRaw(MOVEMENT_AXIS_X), Input.GetAxisRaw(MOVEMENT_AXIS_Y));
+    private GameObject artifact;
 
-               if (moveVector.sqrMagnitude > 1)
-                    moveVector = moveVector.normalized;
-               
-               myBody.velocity = new Vector2(moveVector.x * movementSpeed, moveVector.y * movementSpeed);
-               
-          }
-     }
+    private string MOVEMENT_AXIS_X = "Horizontal";
+    private string MOVEMENT_AXIS_Y = "Vertical";
 
-     void FlipSprite()
-     {
-          if (Input.GetAxisRaw(MOVEMENT_AXIS_X) == 1)
-          {
-               sr.flipX = false;
-          }
-          else if (Input.GetAxisRaw(MOVEMENT_AXIS_X) == -1)
-          {
-               sr.flipX = true;
-          }
-          
-     }
+    private void Awake()
+    {
 
-     private void OnTriggerEnter2D(Collider2D col)
-     {
-          if(col.CompareTag("Bush"))
-          {
-               Debug.Log("The Value of Fruits is: "+ col.gameObject.GetComponent<BushFruits>().HarvestFruit());
-          }
-     }
-}
- 
+        myBody = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
 
 
 
+    }
 
- 
+    private void Update()
+    {
+
+        if (Time.time > harvestTimer)
+            isHarvesting = false;
+
+        FlipSprite();
+
+    }
+
+    private void FixedUpdate()
+    {
+
+        if (isHarvesting)
+            myBody.velocity = Vector2.zero;
+        else
+        {
+
+            moveVector = new Vector2(Input.GetAxis(MOVEMENT_AXIS_X), Input.GetAxis(MOVEMENT_AXIS_Y));
+
+            if (moveVector.sqrMagnitude > 1)
+                moveVector = moveVector.normalized;
+
+            myBody.velocity = new Vector2(moveVector.x * movementSpeed, moveVector.y * movementSpeed);
 
 
+        }
 
+    }
 
+    void FlipSprite()
+    {
 
+        if (Input.GetAxisRaw(MOVEMENT_AXIS_X) == 1)
+        {
+            sr.flipX = false;
+        }
+        else if (Input.GetAxisRaw(MOVEMENT_AXIS_X) == -1)
+        {
+            sr.flipX = true;
+        }
 
+    }
 
+    public void HarvestStopMovement(float time) {
+        isHarvesting = true;
+        harvestTimer = Time.time + time;
+    }
 
+    public bool IsHarvesting() {
+        return isHarvesting;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+} // class
