@@ -64,13 +64,21 @@ public class PlayerMovement : MonoBehaviour
           }
           
      }
+
+     private void OnTriggerEnter2D(Collider2D col)
+     {
+          if(col.CompareTag("Bush"))
+          {
+               Debug.Log("The Value of Fruits is: "+ col.gameObject.GetComponent<BushFruits>().HarvestFruit());
+          }
+     }
 }
  
 
 
 
 
-
+ 
 
 
 

@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 924713001630249813}
   - component: {fileID: 924713001630249811}
   - component: {fileID: 924713001630249812}
+  - component: {fileID: 6471572121431722817}
+  - component: {fileID: 1875814991}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -263,7 +265,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &924713001630249812
 Animator:
   serializedVersion: 4
@@ -284,3 +286,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6471572121431722817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924713001630249837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb380e384a51408abfa305caf7caf23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxNumberOfFruitsToStore: 50
+  currentNumberOfStoredFruits: 0
+  backpackInfoTxt: {fileID: 0}
+--- !u!114 &1875814991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924713001630249837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397256ecdb9794f3385723356b10ea68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
