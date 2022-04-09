@@ -362,7 +362,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e8e4135bfdb53d74d8630bf50c2fcef5, type: 3}
   - {fileID: 21300000, guid: 695bd11414e079c4181fa4c4d4b81fb3, type: 3}
   - {fileID: 21300000, guid: 1bbea70228f6be0418ccb2226d58c319, type: 3}
-  drySprites: []
+  drySprites:
+  - {fileID: 21300000, guid: 81db0a11d015cc042b383a534851b250, type: 3}
+  - {fileID: 21300000, guid: b5a7ea66a63050e47bbcba1c84994f53, type: 3}
+  - {fileID: 21300000, guid: 72c2a1845d96c6f4e9ea8cf4d6c07fc5, type: 3}
   fruitsRenderers:
   - {fileID: 3513294370333385565}
   - {fileID: 3513294370319658360}

@@ -12,7 +12,7 @@ public class PlayerHarvest : MonoBehaviour
     private AudioSource audioSource;
 
     private Collider2D collidedBush;
-    private BushFruits hitBush; 
+    private BushFruits hitBush;
 
     private bool canHarvestFruits;
 
@@ -54,7 +54,6 @@ public class PlayerHarvest : MonoBehaviour
     {
         if (collision.CompareTag("Bush"))
         {
-            Debug.Log("Collided with Bush");
             canHarvestFruits = true;
             collidedBush = collision;
         }
@@ -64,7 +63,6 @@ public class PlayerHarvest : MonoBehaviour
     {
         if (collision.CompareTag("Bush"))
         {
-            Debug.Log("Colliding with Bush is ended");
             canHarvestFruits = false;
             collidedBush = null;
         }

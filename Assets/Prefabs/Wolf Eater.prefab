@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 1574918913287938875}
   - component: {fileID: 1574918913287938874}
   - component: {fileID: 1483096782}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Wolf Eater
   m_TagString: Wolf
   m_Icon: {fileID: 0}

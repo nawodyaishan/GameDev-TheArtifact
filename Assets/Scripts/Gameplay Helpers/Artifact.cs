@@ -60,6 +60,11 @@ public class Artifact : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            //if (collision.GetComponent<PlayerBackpack>().currentNumberOfStoredFruits != 0)
+            //    audioSource.Play();
+
+            //health += collision.GetComponent<PlayerBackpack>().TakeFruits();
+
             if (playerBackpack.currentNumberOfStoredFruits != 0)
                 audioSource.Play();
 

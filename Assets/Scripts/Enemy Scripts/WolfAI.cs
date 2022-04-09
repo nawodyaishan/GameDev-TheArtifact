@@ -55,7 +55,7 @@ public class WolfAI : MonoBehaviour
             if (bushFruitsTarget && bushFruitsTarget.enabled &&
                 bushFruitsTarget.HasFruits() && !killingBush)
             {
-                // if not close to the bushes continue walking towards it, else stop and eat the bush
+                // if not close to the buhs continue walking towards it, else stop and eat the bush
                 if (Vector2.Distance(transform.position, bushFruitsTarget.transform.position) > 0.5f)
                 {
                     float step = moveSpeed * Time.deltaTime;
