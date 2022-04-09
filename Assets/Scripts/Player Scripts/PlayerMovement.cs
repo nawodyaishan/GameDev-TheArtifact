@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     public float movementSpeed = 3f;
 
     private Rigidbody2D myBody;
@@ -23,47 +22,35 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-
         myBody = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-
-
-
     }
 
     private void Update()
     {
-
         if (Time.time > harvestTimer)
             isHarvesting = false;
 
         FlipSprite();
-
     }
 
     private void FixedUpdate()
     {
-
         if (isHarvesting)
             myBody.velocity = Vector2.zero;
         else
         {
-
             moveVector = new Vector2(Input.GetAxis(MOVEMENT_AXIS_X), Input.GetAxis(MOVEMENT_AXIS_Y));
 
             if (moveVector.sqrMagnitude > 1)
                 moveVector = moveVector.normalized;
 
             myBody.velocity = new Vector2(moveVector.x * movementSpeed, moveVector.y * movementSpeed);
-
-
         }
-
     }
 
     void FlipSprite()
     {
-
         if (Input.GetAxisRaw(MOVEMENT_AXIS_X) == 1)
         {
             sr.flipX = false;
@@ -72,16 +59,16 @@ public class PlayerMovement : MonoBehaviour
         {
             sr.flipX = true;
         }
-
     }
 
-    public void HarvestStopMovement(float time) {
+    public void HarvestStopMovement(float time)
+    {
         isHarvesting = true;
         harvestTimer = Time.time + time;
     }
 
-    public bool IsHarvesting() {
+    public bool IsHarvesting()
+    {
         return isHarvesting;
     }
-
 } // class

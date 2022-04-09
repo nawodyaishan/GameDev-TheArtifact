@@ -18,9 +18,10 @@ GameObject:
   - component: {fileID: 924713001630249812}
   - component: {fileID: 6471572121431722817}
   - component: {fileID: 1875814991}
+  - component: {fileID: 988002441}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1823836399
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3245a6694aa805e4dbe1d4f051f2880a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -128,7 +129,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9ecf5eba212734c65baa3a32a4b8a730, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -313,3 +314,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397256ecdb9794f3385723356b10ea68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  harvestTime: 0.4
+--- !u!114 &988002441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924713001630249837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 533e8d20811ca43478c8b19a40be1270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slashPrefab: {fileID: 150815668854753649, guid: da6f9ea2d736246af99452fbf31c6948, type: 3}
+  attackCooldown: 0.3

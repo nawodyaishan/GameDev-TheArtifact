@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class BushVisual : MonoBehaviour
 {
+    [SerializeField] private Sprite[] bushSprites, fruitSprites, drySprites;
 
-    [SerializeField]
-    private Sprite[] bushSprites, fruitSprites, drySprites;
+    [SerializeField] private SpriteRenderer[] fruitsRenderers;
 
-    [SerializeField]
-    private SpriteRenderer[] fruitsRenderers;
+    public enum BushVariant
+    {
+        Green,
+        Cyan,
+        Yellow
+    }
 
-    public enum BushVariant { Green, Cyan, Yellow }
     private BushVariant bushVariant;
 
     public float hideTimePerFruit = 0.2f;
@@ -21,34 +24,37 @@ public class BushVisual : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
 
-        bushVariant = (BushVariant)Random.Range(0, bushSprites.Length);
-        sr.sprite = bushSprites[(int)bushVariant];
+        bushVariant = (BushVariant) Random.Range(0, bushSprites.Length);
+        sr.sprite = bushSprites[(int) bushVariant];
 
         if (Random.Range(0, 2) == 1)
             sr.flipX = true;
 
         for (int i = 0; i < fruitsRenderers.Length; i++)
         {
-            fruitsRenderers[i].sprite = fruitSprites[(int)bushVariant];
+            fruitsRenderers[i].sprite = fruitSprites[(int) bushVariant];
             fruitsRenderers[i].enabled = false;
         }
     }
 
-    public BushVariant GetBushVariant() {
+    public BushVariant GetBushVariant()
+    {
         return bushVariant;
     }
 
-    public void SetToDry() {
-        sr.sprite = drySprites[(int)bushVariant];
+    public void SetToDry()
+    {
+        sr.sprite = drySprites[(int) bushVariant];
     }
 
-    IEnumerator _HideFruits(float time, int index) {
+    IEnumerator _HideFruits(float time, int index)
+    {
         yield return new WaitForSeconds(time);
         fruitsRenderers[index].enabled = false;
     }
 
-    public void HideFruits() {
-
+    public void HideFruits()
+    {
         float waitTimeForFruit = hideTimePerFruit;
 
         for (int i = 0; i < fruitsRenderers.Length; i++)
@@ -56,13 +62,11 @@ public class BushVisual : MonoBehaviour
             StartCoroutine(_HideFruits(waitTimeForFruit, i));
             waitTimeForFruit += hideTimePerFruit;
         }
-
     }
 
     public void ShowFruits()
     {
-        for(int i = 0; i < fruitsRenderers.Length; i++)
+        for (int i = 0; i < fruitsRenderers.Length; i++)
             fruitsRenderers[i].enabled = true;
     }
-
 } // class
